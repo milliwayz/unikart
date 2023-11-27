@@ -1,0 +1,27 @@
+spec: v0.6
+
+name: helloworld-cpp
+
+unikraft:
+  version: stable
+  kconfig:
+    - CONFIG_LIBPOSIX_SYSINFO=y
+    - CONFIG_LIBUKSIGNAL=y
+
+targets:
+  - plat: qemu
+    arch: x86_64
+    kconfig:
+      - CONFIG_PLAT_KVM=y
+      - CONFIG_LIBUKBUS=y
+      - CONFIG_LIBUKSGLIST=y
+      - CONFIG_LIBCXX=y
+      - CONFIG_LIBCOMPILER_RT=y
+      - CONFIG_LIBMUSL=y
+
+libraries:
+  libcxxabi: stable
+  libcxx: stable
+  libunwind: stable
+  compiler-rt: stable
+  musl: stable
